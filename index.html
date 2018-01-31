@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learining javascript</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<!-- Events -->
+<script type="text/javascript">
+	function changetext(){
+		alert("You are Clicked");
+		var header=document.getElementById("headerId");
+		header.innerText="Header successfully changed!!!";
+	}
+	function f1(){
+		alert("Welcome");
+	}
+
+	function showDate(){
+
+		var pid=document.getElementById("dateId");
+		pid.innerText=new Date();
+	}
+	function HideDate(){
+
+		var pid=document.getElementById("dateId");
+		pid.innerText="";
+	}
+
+	function changeColor(x)
+	{	
+		var body=document.getElementById("bodyId");
+		body.style.backgroundColor=x.value;
+	}
+	function validateForm(){
+		var fname=document.getElementById("fName").value;
+		var lname=document.getElementById("lName").value;
+		if (fname==null || fname=="") {
+			alert("Please enter FirstName");
+			return false;
+		}
+	}
+</script>
+<body id="bodyId" onload="return f1()">
+	<div class="header">	
+		<h1 id="headerId">Learning javascript</h1>
+		<p>With Brad Traversy</p>
+	</div>
+	<div class="container">
+		<button id="btnSubmit" onclick="changetext()">Click Me</button>
+	</div>
+
+	<div class="container">
+		<button id="btnSubmit" onmouseover="showDate()" onmouseout="HideDate()">Show Date</button>
+		<p id="dateId"></p>
+	</div>
+	<div class="container">
+		<form method="post" onsubmit="return validateForm()" action="index1.html">
+			<div><label>FirstName</label>
+				<input type="text" name="fName" id="fName">
+			</div>
+			<br>
+			<div><label>LastName</label>
+				<input type="text" name="lName" id="lName">
+			</div>
+			<br>
+			<div><label>Background</label>
+				<select id="bgcolor" onchange="changeColor(this)">
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+					<option value="violet">violet</option>
+
+				</select>
+			</div>
+			<br>
+			<input type="submit" name="btnSubmit" value="Submit">
+
+		</form>
+
+	</div>
+
+
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript">
+		alert("hello");
+	</script>
+	<script type="text/javascript">
+		var num=35;
+		console.log(num);
+	</script>
+	<script type="text/javascript">
+		var num1='35';
+		var num2 =80;
+		alert(num1+num2);			
+	</script>
+	<!-- Case Sensitive -->
+	<script type="text/javascript">
+		var test="This is a test"
+		var Test ="This is another test";
+		alert(Test);			
+	</script>
+	<!-- Casing -->
+	<script type="text/javascript">
+	// CamelCasing
+	var myFavoriteNumber;
+	myFavoriteNumber=5;
+	// PartialCasing
+	var MyFavoriteNumber;
+	// Underscore
+	var my_favorite_number;				
+</script>
+<!-- Arrays -->
+<script type="text/javascript">
+	var colors=["Blue","Green","Yellow"];
+	colors[3]="White";
+    alert(colors[0]);//Blue
+
+    var colors=new Array("Blue","Green","Yellow");
+    colors.push("Purple");
+    alert(colors[2]);//Yellow
+    alert(colors.length);//4
+
+    var num =[20,15,25,85];
+    alert(num[0]+num[2]);  //45
+
+    var num =[20,15,25,85,"Brad",55];
+    alert(num[0]+num[4]);  //20Brad
+
+     alert(num.sort());//15,20,25,55,85,Brad
+       alert(num.reverse());//Brad,85,55,25,20,15
+
+   </script>
+   <!-- Loops -->
+
+   <script type="text/javascript">
+   	console.log("For Loop Iteration");
+   	for (var i = 0; i <10; i++) {
+
+   		console.log(i);
+   	}
+
+   	var num =5;
+   	console.log("While Loop Iteration");
+   	while(num<10)
+   	{
+   		num++;
+
+   		console.log(num);
+   	}	
+
+   	var numbers = [10,20,30,50]	
+   	console.log("Foreach Loop Iteration");
+   	numbers.forEach(function(number){
+   		console.log(number);
+   	});
+
+
+   	console.log("For Loop Iteration in Arrays");
+   	for (var i = 0; i <numbers.length; i++) {
+   		console.log(numbers[i]);
+   	}
+
+   </script>
+
+   <!-- Conditionals -->
+
+   <script type="text/javascript">
+   	if (1==1) {
+   		console.log("true");
+   	}
+   	else{
+   		console.log("false");
+	}//true
+
+	var num1=20;
+	var num2=30;
+	if (num1==num2 && num2==30) {
+		console.log("true");
+	}
+	else{
+		console.log("false");
+	}//false
+
+	if (num1>num2 && num2==30) {
+		console.log(num1+num2);
+	}//30
+	else{
+		console.log(num2-num1);
+	}//10
+
+
+</script>
+<!-- switch case -->
+<script type="text/javascript">
+	
+	var fruit="carrot";
+	switch(fruit){
+		case "banana":
+		console.log("I love banana");
+		break;
+		case "apple":
+		console.log("I love apple");
+		break;  
+		case "grapes":
+		console.log("I hate grapes");
+		break; 
+		default:
+		console.log("I love to eat fruits");
+		break; 
+	}
+
+</script>
+<!-- Objects -->
+<script type="text/javascript">
+	
+	var person={
+		firstName:"Brad",
+		lastName:"Traversy",
+		age:34,
+		children:["brianna",'Nicholas'],
+		address:{
+			street:'555 something st',
+			city:'Boston',
+			state:'MA'
+		},
+		fullName:function(){
+			return this.firstName+" "+this.lastName;
+		}
+
+	}
+
+
+    console.log(person.firstName);//Brad
+    console.log(person.children);//["brianna",'Nicholas']
+    console.log(person.children[0]);//brianna
+    console.log(person.address.street);//555 something st
+    console.log(person.fullName());//Brad Traversy
+
+</script>
+<!-- Object Constructor -->
+<script type="text/javascript">
+	
+	var apple=new Object();
+	apple.color='red';
+	apple.shape='round';
+	apple.arr=[10,20];
+	apple.describe=function(){
+		return 'An apple is the color '+ this.color + ' and is the shape '+ this.shape;
+	}
+console.log(apple.arr);//[10,20]
+console.log(apple.describe());
+</script>
+
+<!-- Constructor Pattern-->
+<script type="text/javascript">
+	
+	function fruit(name,color,shape)
+	{
+		this.name=name;
+		this.color=color;
+		this.shape=shape;
+		this.describe=function(){
+			return 'The ' +this.name + 'is the color' + this.color
+		}	
+	}
+
+	var apple = new fruit('Apple','Red','Round');
+	var melon = new fruit('Melon','Green','Round');
+
+	console.log(apple.describe());
+
+// Objects in Arrays
+var users = [
+
+{
+	fname:'Brad',
+	lname:'Traversy'
+},
+
+{
+	fname:'John',
+	lname:'Bio'
+},
+{
+	fname:'Pooja',
+	lname:'ricky'
+}
+];
+
+console.log(users[0].fname);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html> 
